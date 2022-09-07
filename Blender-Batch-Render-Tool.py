@@ -24,7 +24,7 @@ def Render():
 
 	bat_file.close()
 
-	#subprocess.call([r"Batch.bat"])
+	subprocess.call([r"Batch.bat"])
 
 def BlenderPath():
 	blender_path = filedialog.askdirectory(title='Save Video')
@@ -43,7 +43,7 @@ root.geometry('400x170')
 root.iconbitmap(r'icon.ico')
 root.configure(background='orange')
 root.resizable(False, False)
-root.title("Blender Batch Renderer")
+root.title("Blender Batch Render Tool")
 
 path = StringVar()
 b_path = StringVar()
