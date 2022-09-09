@@ -10,13 +10,13 @@ def Render():
 	path_str = path_str[1:-1]
 	blender_files = path_str.split(", ")
 
-	bat_code += "'" + b_path.get() + "'" + "\n"
+	bat_code += '"' + b_path.get() + '"'
 
 	if len(blender_files) == 1:
-		bat_code += "blender -b " + blender_files[0][0:-1] + " -a" + "\n"
+		bat_code += "\n" + "blender -b " + '"' + blender_files[0][1:-2] + '"' + " -a"
 	else:
 		for i in range(len(blender_files)):
-			bat_code += "blender -b " + blender_files[i] + " -a" + "\n"
+			bat_code += "\n" + "blender -b " + '"' + blender_files[i][1:-1] + '"' + " -a"
 
 	bat_file = open(r"Batch.bat", "w+")
 
